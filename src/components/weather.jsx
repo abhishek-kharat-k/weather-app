@@ -59,7 +59,7 @@ function Weather () {
 
 
     return(
-        <div className="">
+        <div className="weather-container">
             <Search 
                 search={search}
                 setSearch={setSearch}

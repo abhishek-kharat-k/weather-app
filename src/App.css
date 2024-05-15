@@ -2,8 +2,9 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #ced8ff;
   /* background-color: #000; */
+  /* color: white; */
 }
 
 
@@ -14,13 +15,26 @@ body{
 .App{
   text-align: center;
   margin: 0px auto 0;
-
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 90%;
-  background-color: #6da8df;
+  /* background-color: #6da8df; */
+  background-color: #fff;
   border-radius: 20px;
-  height: 420px;
+  height: 500px;
   padding: 20px 15px;
   margin-top: 20px;
+}
+
+
+.dark-btn{
+  border: none;
+  border-radius: 8px;
+  background-color: black;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  padding: 13px 15px;
 }
 
 
@@ -29,28 +43,33 @@ body{
 .input-city{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 30px;
   margin-top: 10px;
 }
 
 .input-city input{
-  width: 70%;
+  width: 50%;
   height: 45px;
   border: 1px solid;
   border-radius: 8px;
   padding: 2px 15px;
-  font-size: 16px;
+  font-size: 25px;
   outline: none;
-  background-color: #fff;
-  color: #555555;
+  background-color: #000;
+  color: #fff;
+}
+
+::placeholder{
+  color: #fff;
+  font-size: 25px;
 }
 
 .input-city button{
   border: none;
   border-radius: 8px;
-  background-color: gray;
+  background-color: black;
   color: #fff;
   font-size: 20px;
   outline: none;
@@ -118,6 +137,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   column-gap: 12px;
+  width: 100%;
 }
 
 
@@ -130,24 +150,31 @@ body{
 }
 
 .forecast-card {
-  background-color: #ccdcf4;
+  /* background-color: #ccdcf4; */
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
   text-align: center;
 }
 
 .forecast-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+.mini-temp{
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .forecast-card p {
   margin-bottom: 5px;
+  font-size: 25px;
 }
 
 .wind-humidity{
@@ -156,14 +183,86 @@ body{
   align-items: center;
 }
 
-@media (max-width: 1200px) {
-  .forecast-card {
-    width: calc(50% - 20px);
-  }
+
+
+/* Add dark mode styles */
+.dark-mode .App{
+  background-color: black;
+  color: #fff;
 }
 
-@media (max-width: 768px) {
-  .forecast-card {
-    width: 100%;
-  }
+.dark-mode .dark-btn{
+  background-color: #fff;
+  color: #000;
 }
+
+.dark-mode .input-city input{
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode .input-city input::placeholder{
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode .input-city button{
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+
+.dark-mode .loading,
+.dark-mode .temperature,
+.dark-mode .description,
+.dark-mode .weather-info,
+.dark-mode .more-weather-info,
+.dark-mode .forecast-card {
+  color: #fff;
+}
+
+
+
+
+
+/* Dark mode styles for .row */
+.dark-mode .row {
+  column-gap: 12px;
+}
+
+/* Dark mode styles for .forecast-container */
+.dark-mode .forecast-container {
+  justify-content: space-around;
+}
+
+/* Dark mode styles for .forecast-card */
+.dark-mode .forecast-card {
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode styles for h3 inside .forecast-card */
+.dark-mode .forecast-card h3 {
+  color: #fff;
+}
+
+/* Dark mode styles for .mini-temp inside .forecast-card */
+.dark-mode .forecast-card .mini-temp {
+  color: #ddd;
+}
+
+/* Dark mode styles for .wind-humidity inside .forecast-card */
+.dark-mode .forecast-card .wind-humidity {
+  color: #ddd;
+}
+
+
+
+
+
+

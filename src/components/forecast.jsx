@@ -33,11 +33,18 @@ function Forecast() {
             <div key={index} className="forecast-card">
               <div className="flex">
                 <h1>{new Date(day.dt * 1000).toLocaleDateString('en-us', { weekday: 'long' })}</h1>
-                <h4>{day.weather[0].description}</h4>
-                <p>Temperature: {Math.round(day.main.temp - 273.15)} °C</p>
+                <h3>{day.weather[0].description}</h3>
+                <p className="mini-temp">Temperature: {Math.round(day.main.temp - 273.15)} °C</p>
                 <div className="wind-humidity">
-                <p>Wind Speed: {day.wind.speed} m/s</p>
-                <p>Humidity: {day.main.humidity}%</p>
+                  <div>
+                    <p>{day.wind.speed} m/s</p>
+                    <p>WindSpeed</p>
+                  </div>
+                  <div>
+                    <p>{day.main.humidity}%</p>
+                    <p>Humidity</p>
+                  </div>
+                
                 </div>
               </div>
             </div>
